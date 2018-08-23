@@ -1,0 +1,23 @@
+Sweater Weather
+(Created by Aaron Shi and Michelle Chiang for Harvard's CS50 Final Project)
+--------------
+Description:
+Sweater Weather is a Chrome extension that suggests basic items of clothing to wear based on the weather at the user's location. For example, given 40F rainy weather, Sweater Weather will suggest "It's cold outside. Wear a sweater, long pants, and a heavy jacket. Also, bring an umbrella!"
+Video description url (YouTube): https://www.youtube.com/watch?v=ILmSsOO5bxI
+
+How to access:
+1) Go to the Chrome web store.
+2) Search "Sweater Weather" and download.
+3) Give geolocation permissions.
+4) Click on sun icon at top right, in icon bar.
+5) Proceed to rate 5 stars.
+
+How to use:
+After the extension has been installed, click the ________ button at the top right hand corner, to the right of the omnibox, to use. This will open up a popup window, which will contain the following information, from top to bottom:
+[City, State of user's location]
+[Icon summarizing current conditions] [Temperature (F)]
+[Precipitation] [Humidity] [Wind]
+[A dynamic string of clothing suggestions for the user] Along with clothing suggestions, this string will also tell the user whenever it is raining or snowing.
+[Clothing icons corresponding to the above suggestions]
+
+Follow those suggestions for a fun time :)

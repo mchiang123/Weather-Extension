@@ -1,0 +1,81 @@
+<!doctype html>
+<!-- This page is shown when the extension button is clicked. -->
+<html>
+	<head>
+		<title>Weather Extension</title>
+		<!-- Popup CSS -->
+		<link rel= "stylesheet" type = "text/css" href = "popup.css">
+		<!-- Google Font: Raleway -->
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+	</head>
+	<body>
+		<!--display weather info for user's location
+		and display recommended clothing-->
+		<header>
+			<h2 id='city,state'></h1>
+		</header>
+		
+		<!--image and temperature-->
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6">
+				<img id='img_src' src='' width="90" height="90"></img>
+				</div>
+				<div class="col-xs-6">
+				<p></p>
+				<h1 id='temperature' class="font-weight-bold"></h1>
+				<p id='feels_like'></p>
+				</div>
+			</div>
+		</div>
+		<!--other conditions-->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-4">
+					<strong>Precipitation</strong>
+				</div>
+				<div class="col-xs-4">
+					<strong>Humidity</strong>
+				</div>
+				<div class="col-xs-4">
+					<strong>Wind</strong>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">
+					<p id='CoP'></p>
+				</div>
+				<div class="col-xs-4">
+					<p id='humidity'></p>
+				</div>
+				<div class="col-xs-4">
+					<p id='wind'></p>
+				</div>
+			</div>
+		</div>
+		<!--clothes recommendation in text form-->
+		<p id='string'></p>
+		<!--clothes icons-->
+		<div id="clothes-row1" class="container-fluid">
+			<div class="row">
+				<div class="col-xs-4">
+					<img id='clothes1' src='' width="70" height="70"></img>
+				</div>
+				<div class="col-xs-4">
+					<img id='clothes3' src='' width="70" height="70"></img>
+				</div>
+				<div class="col-xs-4">
+					<img id='clothes2' src='' width="70" height="70"></img>
+				</div>
+			</div>
+		</div>
+
+		<!--load external files-->
+		<script src="jquery.min.js"></script>
+		<script src="popup.js"></script>
+
+	</body>
+</html>
+

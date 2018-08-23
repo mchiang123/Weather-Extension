@@ -1,0 +1,23 @@
+Sweater Weather Chrome Extension: Design Documentation
+
+
+Sweater Weather is a popup that displays the weather information for a user's current location and makes recommendations for what the user should wear. We made it a Chrome extension because it's convenient for the user; anyone who's working indoors on a laptop and needs to go outside can simply click on Sweater Weather and see exactly what to wear, without having to open a weather website or physically go outside and check the weather. Moreover, because it's a popup, it doesn't disrupt whatever work the user was doing beforehand. Sweater Weather is comprised of four parts:
+
+1) popup.html
+	In order to more easily define and style the layout of the Sweater Weather popup, we used Bootstrap, a Google font named Raleway, and popup.css (see #2). In the body of the html file, the user's current location is defined as a header; below it, certain information - temperature, chance of precipitation, humidity, wind, and an icon illustrating the current weather and light conditions - are displayed in Bootstrap grids of different sizes (for aesthetic purposes). Below that, there's a paragraph that gives clothing recommendations. Finally, at the bottom there's a row of 70x70 icons that illustrate those clothing recommendations. It's important to note that popup.html simply provides the framework and sizes for these things; popup.js (see #3) fills them in.
+
+2) popup.css
+	Defines the popup's size at 375x400 px, with 20px padding. Also makes all text Raleway and center-aligned.
+
+3) popup.js
+	a) finding user's location: 
+		Sweater Weather uses Chrome's geolocation  service to get the user's current location. First we define two variables lat and long. Then we run navigator.geolocation.getCurrentPostiion(), which stores the user's latitude and longitude coordinates in lat and long. 
+	b) getting weather information:
+		We decided to use an API key from wunderground.com that allows us to fetch weather information from their website in a json file, because it was more straightforward than "reinventing the wheel" by creating our own scraper. Once the html has fully loaded and the json file has been retrieved, popup.js gets certain weather conditions from the json file and stores them in variables. Then it writes those conditions to the html file so that they can be displayed. This is done using jQuery.
+	c) making clothing recommendations:
+		We assigned pieces of clothing to specific ranges for each weather condition. For example, if the temperature feels between 50 and 60 degrees F, Sweater Weather will recommend wearing a long sleeve shirt, and put the long sleeve shirt icon into the corresponding column in the html grid at the bottom of the popup. It will also display a descriptive string saying, "It's chilly."
+	d) errors:
+		There are multiple checks for errors written into the code. In case of an error, there will be an alert box that pops up that describes what went wrong. (If it seems like nothing is in the popup, that just means that the Internet might be being slow - the information will materialize eventually.)
+
+4) manifest.json
+	Every Chrome extension needs a manifest file for the extension's metadata. This file defines the extension's name as "Sweater Weather", provides the description that shows up on the Chrome extension store and the user's extensions page, specifies which png to use as the icon, grants the extension permission to use geolocation (once the user has granted permission to the extension - they click on a dialogue box that automatically pops up), and makes the extension have an icon on the Chrome toolbar that, when clicked on, generates a popup, regardless of which web page the user is currently on.
